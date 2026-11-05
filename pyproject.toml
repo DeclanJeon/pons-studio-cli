@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=78"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pons-studio-cli"
+version = "0.3.0.dev0"
+description = "Standalone terminal-first video production agent powered by Codex and local tools"
+readme = "README.md"
+keywords = ["cli", "video", "codex", "mcp", "workflow"]
+classifiers = ["Development Status :: 3 - Alpha", "Environment :: Console", "Programming Language :: Python :: 3", "Operating System :: POSIX :: Linux"]
+requires-python = ">=3.11"
+dependencies = ["cryptography>=43,<47", "Pillow>=11,<13", "pypdf>=5,<7", "tomli-w>=1.2,<2"]
+
+[project.scripts]
+pons = "pons_cli.__main__:main"
+pons-skills = "server.skill_setup:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pons_cli*", "server*"]
+
+[project.urls]
+Repository = "https://github.com/DeclanJeon/pons-studio-cli"
+Issues = "https://github.com/DeclanJeon/pons-studio-cli/issues"
+
+[tool.setuptools.package-data]
+server = ["resources/*.md"]
+
+[tool.pons]
+cli = "stdlib argparse"
+http = "stdlib http.client (loopback only, no redirects)"
+tests = "existing unittest suite"
+policy = "No new runtime dependencies; reuse the existing backend manifest"
+
+[tool.ruff.lint]
+select = ["ALL"]

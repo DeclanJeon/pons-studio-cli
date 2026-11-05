@@ -1,0 +1,4 @@
+cryptography>=43,<47
+Pillow>=11,<13
+pypdf>=5,<7
+tomli-w>=1.2,<2

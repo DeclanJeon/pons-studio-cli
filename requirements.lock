@@ -1,0 +1,6 @@
+cffi==2.1.1
+cryptography==46.0.7
+pillow==12.3.0
+pycparser==3.12
+pypdf==6.21.4
+tomli-w==1.2.0
