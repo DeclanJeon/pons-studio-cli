@@ -45,7 +45,7 @@ PONS_TEST_WHEEL="$PWD/dist/pons_studio_cli-0.3.0.dev0-py3-none-any.whl" \
   python3 -m unittest discover -s tests -v
 ```
 
-For the optional external integration profile, set `PONS_TEST_SKILLS_SOURCE` to your authorized pinned source. Missing external instructions are reported as explicit skips rather than successful validation.
+Without `PONS_TEST_WHEEL`, the wheel integration test is also explicitly skipped; a fresh default source/CI run therefore has four optional skips. The results table above enabled the built-wheel check. For the optional external integration profile, set `PONS_TEST_SKILLS_SOURCE` to your authorized pinned source. Missing external instructions are reported as explicit skips rather than successful validation.
 
 ## Not verified / open risks
 
@@ -55,5 +55,11 @@ For the optional external integration profile, set `PONS_TEST_SKILLS_SOURCE` to 
 - Same-user loopback/browser bootstrap is not an adversarial-agent isolation guarantee. The extraction does not turn the original single-user backend into a secure public service.
 - Static warnings remain in legacy/untyped JSON/SQLite/argparse boundaries and new setup integration. Ruff was unavailable; no lint-clean claim is made.
 - Upstream instruction licenses and access rights must be handled separately. This repository does not invent an open-source license or vendor external instruction code.
+
+## GitHub publication
+
+Repository: https://github.com/DeclanJeon/pons-studio-cli. Visibility was verified as private and the default branch as main. Initial extraction commit: `f6d9313`. The pushed commit identity was compared through the GitHub API; README is included at the repository root. Follow-up documentation records completion of these extraction checks, not completion of all video-production features.
+
+Staged files were compared with working content; copied Python files were byte-compared with the preserved original and all extraction deltas were inspected. Forbidden data paths and common GitHub token/private-key patterns were checked. This is a scoped content audit, not a proof that no possible secret can exist.
 
 Build products and raw local QA logs are ignored, not committed. The GitHub Actions workflow is manual-dispatch only; publishing the repository does not automatically start installation, provider calls or CI jobs.

@@ -10,8 +10,10 @@ Execution: user-approved sequential implementation/self-review (independent agen
 - [x] Add explicit external skill source configuration and portable setup instructions.
 - [x] Add README, notices, ignore rules, manual CI and packaging tests.
 - [x] Run source tests, wheel/sdist checks and unpacked-wheel layout smoke tests without dependency installation.
-- [ ] Inspect staged content for private files/secrets, commit and create private GitHub repo.
-- [ ] Push and verify remote visibility, branch and commit.
+- [x] Inspect staged content for private files/secrets, commit and create private GitHub repo.
+- [x] Push and verify remote visibility, branch and commit.
+
+Published: https://github.com/DeclanJeon/pons-studio-cli (private, main). Initial implementation commit: f6d9313. Local and remote commit identities were compared after push. Publication does not imply completion of the production roadmap.
 
 Dependency map: pons_cli -> server HTTP API -> runner/store/media/providers. runner uses tool_client.py and two instruction contracts; bootstrap needs an explicitly prepared, pinned external skill source. No frontend runtime is required.
 
